@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/box-shadow.css" />
-  <link rel="stylesheet" href="css/" />
+  <link rel="stylesheet" href="css/tabela.css" />
   <link rel="stylesheet" href="css/detail.css" />
   <link rel="stylesheet" type="text/tailwindcss" href="/css/tabela.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -28,10 +28,10 @@
       </div>
 
       <nav class="hidden md:flex gap-6">
-        <a href="#inicio" class="active">Início</a>
+        <a href="index.html" class="active">Início</a>
         <a href="#Futebol">Futebol</a>
-        <a href="#aovivo">Ao Vivo</a>
-        <a href="#jogos">Jogos</a>
+        <a href="aovivo.html">Ao Vivo</a>
+        <a href="#jogos">Tabela</a>
         <a href="/docs/Regulamento_da_ Batalha_ de_ Robo.pdf" 
           download="Regras__2026.pdf" 
           class="menu-item link-regras"
@@ -44,6 +44,7 @@
       </div>
     </div>
   </header>
+
 
   <section class="hero-ciebp" id="inicio" aria-label="Destaques CIEBP">
     <div class="carousel-container">
@@ -124,100 +125,160 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/-Wmhyd6z418?si=GzbERq2Ju0PAU0jV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </section>
-
-<div class=" bg-navy">
-  <hr class="linha-rosa " >
- <br>
-  <div id="aovivo">
-      <h1 class="title-secundary">Transmissão 🔴 Ao Vivo</h1>
-  </div>
-<section id="aovivo" class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-8">
     
-    <div class="lg:col-span-2 bg-white p-8 rounded-xl-custom shadow-xl border-t-8 border-ciebp-pink flex flex-col justify-center items-center gap-10 h-full">
-        
-        
-        <div class="flex items-center justify-center gap-2">
-            <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
-            <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs">Placar ao Vivo</h3>
-        </div>
+<!-- ═══════════════════════════════════════════════════════════
+     TABELA DINÂMICA
+════════════════════════════════════════════════════════════ -->
+<section id="tabela">
+  <div class="container">
 
-        <div class="flex justify-center items-center gap-4 w-full">
-            <div class="text-center flex flex-col items-center w-1/3">
-                <div class="w-24 h-24 bg-gray-50 rounded-2xl mb-3 flex items-center justify-center text-5xl shadow-inner border border-gray-100">🤖</div>
-                <p id="team-a-name" class="font-bold text-ciebp-blue text-sm uppercase text-center break-words">Strikers</p>
-                <p id="team-a-class" class="text-xs text-gray-400 uppercase">Turma 9ºanoA</p>
-            </div>
-
-            <div class="flex items-center justify-center text-7xl font-black text-ciebp-blue italic tracking-tighter w-1/3">
-                <span id="score-a">0</span>
-                <span class="mx-2 text-4xl text-gray-300 font-normal">-</span>
-                <span id="score-b">0</span>
-            </div>
-
-            <div class="text-center flex flex-col items-center w-1/3">
-                <div class="w-24 h-24 bg-gray-50 rounded-2xl mb-3 flex items-center justify-center text-5xl shadow-inner border border-gray-100">👾</div>
-                <p id="team-b-name" class="font-bold text-ciebp-blue text-sm uppercase text-center break-words">Aliens</p>
-                <p id="team-b-class" class="text-xs text-gray-400 uppercase">Turma 9º</p>
-            </div>
-        </div>
-
-        <div class="text-center w-full">
-            <span class="inline-block px-8 py-3 bg-red-50 text-red-600 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-red-100 w-full md:w-auto">Transmissão em Tempo Real</span>
-        </div>
-    </div>
-
-    <div class="lg:col-span-3 bg-black rounded-xl-custom overflow-hidden shadow-2xl aspect-video border-4 border-white">
-        <iframe width="100%" height="100%"  height="315" src="https://www.youtube.com/embed/N2k1APn8-18?si=D4lSNspQxxay5lY7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    
-</section>
-<br><br>
-<hr class="linha-rosa">
-</div>
-
-        
-
-
-  <section class="max-w-[1400px] mx-auto px-6 py-20" id="jogos">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
-      
+    <!-- Cabeçalho da seção -->
+    <div class="table-header">
       <div>
-        <p class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-1">Central de Jogos</p>
-        <h2 class="font-['Bebas_Neue'] text-5xl text-[#193375] leading-none">TABELA EM <span class="text-[#FF1D6E]">TEMPO REAL</span></h2>
+        <p class="section-label">Gestão de Projetos</p>
+        <h2 class="section-title">Iniciativas em Andamento</h2>
+        <p class="section-subtitle">
+          Acompanhe em tempo real o status, progresso e responsáveis de cada
+          projeto do CIEBP. Use os filtros para navegar por área ou situação.
+        </p>
       </div>
-
-      <div class="flex flex-col items-end gap-3">
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn active font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('all', this)">Todos</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('live', this)">Ao Vivo</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('ended', this)">Encerrados</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('upcoming', this)">Em Breve</button>
-        </div>
-        
-        <button id="refresh-btn" class="font-bold text-xs uppercase tracking-widest text-[#193375] bg-white border border-[#193375] px-4 py-2 rounded-full hover:bg-blue-50 transition" onclick="refreshScores()">
-          ↻ Atualizar Placares
-        </button>
-      </div>
-
+      <button class="btn-primary" onclick="openModal()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+        Nova Iniciativa
+      </button>
     </div>
-    
-    <section id="tabela" class="container mx-auto px-6">
-            <div class="table-card">
-                <div class="p-8 flex justify-between items-end border-b border-gray-50">
-                    <h2 class="text-2xl font-black text-ciebp-blue uppercase tracking-tight">Cronograma de Jogos</h2>
-                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Temporada 2026</span>
-                </div>
-                <div class="overflow-x-auto px-4">
-                    <table class="w-full text-left">
-                        <tbody id="games-table-body">
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
 
-    <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </section>
+    <!-- Toolbar: busca + filtros -->
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <input id="search-input" type="text" placeholder="Buscar por título, responsável ou categoria…" />
+      </div>
+
+      <button class="filter-btn all active" data-filter="Todos">Todos</button>
+      <button class="filter-btn" data-filter="Ativo">Ativo</button>
+      <button class="filter-btn" data-filter="Em Pausa">Em Pausa</button>
+      <button class="filter-btn" data-filter="Planejado">Planejado</button>
+      <button class="filter-btn" data-filter="Concluído">Concluído</button>
+    </div>
+
+    <!-- Tabela -->
+    <div class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th data-col="titulo">Iniciativa</th>
+              <th data-col="categoria">Categoria</th>
+              <th data-col="responsavel">Responsável</th>
+              <th data-col="status">Status</th>
+              <th data-col="prioridade">Prioridade</th>
+              <th data-col="data_fim">Prazo</th>
+              <th>Progresso</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- preenchido via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer da tabela -->
+      <div class="table-footer">
+        <span id="row-count">—</span>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL – Adicionar / Editar
+════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Nova Iniciativa</h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+
+    <form id="modal-form" onsubmit="return false">
+      <div class="form-group">
+        <label for="f-titulo">Título</label>
+        <input id="f-titulo" type="text" placeholder="Nome da iniciativa" />
+      </div>
+
+      <div class="form-group">
+        <label for="f-descricao">Descrição</label>
+        <textarea id="f-descricao" rows="2" placeholder="Breve descrição do projeto…"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-categoria">Categoria</label>
+          <select id="f-categoria">
+            <option>Inovação Pedagógica</option>
+            <option>Formação de Professores</option>
+            <option>Tecnologia Educacional</option>
+            <option>Gestão Escolar</option>
+            <option>Avaliação e Dados</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-responsavel">Responsável</label>
+          <input id="f-responsavel" type="text" placeholder="Nome do responsável" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-status">Status</label>
+          <select id="f-status">
+            <option>Ativo</option>
+            <option>Em Pausa</option>
+            <option>Planejado</option>
+            <option>Concluído</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-prioridade">Prioridade</label>
+          <select id="f-prioridade">
+            <option>Alta</option>
+            <option>Média</option>
+            <option>Baixa</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-data-inicio">Data de Início</label>
+          <input id="f-data-inicio" type="date" />
+        </div>
+        <div class="form-group">
+          <label for="f-data-fim">Data de Término</label>
+          <input id="f-data-fim" type="date" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-progresso">Progresso (0–100%)</label>
+        <input id="f-progresso" type="number" min="0" max="100" placeholder="0" />
+      </div>
+    </form>
+
+    <div class="modal-actions">
+      <button class="btn-outline" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveModal()">Salvar</button>
+    </div>
+  </div>
+</div>
 
   <hr class="linha-rosa">
 
@@ -293,12 +354,12 @@
 </footer>
   
 
-  <script src="js/app.js"></script>
-  <script src="js/carrousel.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/carrousel.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="tailwind.config.js"></script>
-    <script src="js/tabela.js"></script>
-  <script src="/js/resultado.js"></script>
+  <script src="./tailwind.config.js"></script>
+    <script src="./js/tabela.js"></script>
+  <script src="./js/resultado.js"></script>
   <script>
 tailwind.config = {
     theme: {

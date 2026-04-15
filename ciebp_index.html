@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIEBP – Centro de Inovação da Educação Básica Paulista</title>
+  <link rel="stylesheet" href="ciebp_styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <nav>
+    <a class="nav-logo" href="#">
+      <!-- Substitua pelo caminho correto do logotipo -->
+      <img src="logo-ciebp.png" alt="CIEBP" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#tabela">Iniciativas</a></li>
+      <li><a href="#">Formação</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <span class="hero-badge">Rede Estadual de SP</span>
+    <h1>Inovação que<br/><span>transforma</span> a educação</h1>
+    <p>
+      O CIEBP conecta escolas, professores e gestores por meio de projetos
+      de inovação pedagógica, formação continuada e tecnologia educacional.
+    </p>
+    <a href="#tabela" class="btn-primary">
+      Ver Iniciativas
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-number" data-target="50" data-suffix="+">&nbsp;</span>
+      <span class="stat-label">Escolas Atendidas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="2000" data-suffix="+">&nbsp;</span>
+      <span class="stat-label">Professores Formados</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="7">&nbsp;</span>
+      <span class="stat-label">Iniciativas Ativas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number" data-target="5">&nbsp;</span>
+      <span class="stat-label">Eixos Temáticos</span>
+    </div>
+  </div>
+</header>
+<div class="wave"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELA DINÂMICA
+════════════════════════════════════════════════════════════ -->
+<section id="tabela">
+  <div class="container">
+
+    <!-- Cabeçalho da seção -->
+    <div class="table-header">
+      <div>
+        <p class="section-label">Gestão de Projetos</p>
+        <h2 class="section-title">Iniciativas em Andamento</h2>
+        <p class="section-subtitle">
+          Acompanhe em tempo real o status, progresso e responsáveis de cada
+          projeto do CIEBP. Use os filtros para navegar por área ou situação.
+        </p>
+      </div>
+      <button class="btn-primary" onclick="openModal()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+        </svg>
+        Nova Iniciativa
+      </button>
+    </div>
+
+    <!-- Toolbar: busca + filtros -->
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <input id="search-input" type="text" placeholder="Buscar por título, responsável ou categoria…" />
+      </div>
+
+      <button class="filter-btn all active" data-filter="Todos">Todos</button>
+      <button class="filter-btn" data-filter="Ativo">Ativo</button>
+      <button class="filter-btn" data-filter="Em Pausa">Em Pausa</button>
+      <button class="filter-btn" data-filter="Planejado">Planejado</button>
+      <button class="filter-btn" data-filter="Concluído">Concluído</button>
+    </div>
+
+    <!-- Tabela -->
+    <div class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th data-col="titulo">Iniciativa</th>
+              <th data-col="categoria">Categoria</th>
+              <th data-col="responsavel">Responsável</th>
+              <th data-col="status">Status</th>
+              <th data-col="prioridade">Prioridade</th>
+              <th data-col="data_fim">Prazo</th>
+              <th>Progresso</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- preenchido via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer da tabela -->
+      <div class="table-footer">
+        <span id="row-count">—</span>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL – Adicionar / Editar
+════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Nova Iniciativa</h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+
+    <form id="modal-form" onsubmit="return false">
+      <div class="form-group">
+        <label for="f-titulo">Título</label>
+        <input id="f-titulo" type="text" placeholder="Nome da iniciativa" />
+      </div>
+
+      <div class="form-group">
+        <label for="f-descricao">Descrição</label>
+        <textarea id="f-descricao" rows="2" placeholder="Breve descrição do projeto…"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-categoria">Categoria</label>
+          <select id="f-categoria">
+            <option>Inovação Pedagógica</option>
+            <option>Formação de Professores</option>
+            <option>Tecnologia Educacional</option>
+            <option>Gestão Escolar</option>
+            <option>Avaliação e Dados</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-responsavel">Responsável</label>
+          <input id="f-responsavel" type="text" placeholder="Nome do responsável" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-status">Status</label>
+          <select id="f-status">
+            <option>Ativo</option>
+            <option>Em Pausa</option>
+            <option>Planejado</option>
+            <option>Concluído</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-prioridade">Prioridade</label>
+          <select id="f-prioridade">
+            <option>Alta</option>
+            <option>Média</option>
+            <option>Baixa</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-data-inicio">Data de Início</label>
+          <input id="f-data-inicio" type="date" />
+        </div>
+        <div class="form-group">
+          <label for="f-data-fim">Data de Término</label>
+          <input id="f-data-fim" type="date" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-progresso">Progresso (0–100%)</label>
+        <input id="f-progresso" type="number" min="0" max="100" placeholder="0" />
+      </div>
+    </form>
+
+    <div class="modal-actions">
+      <button class="btn-outline" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveModal()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer>
+  <img src="logo-ciebp.png" alt="CIEBP" />
+  <p>
+    <strong>CIEBP</strong> – Centro de Inovação da Educação Básica Paulista<br/>
+    Secretaria da Educação do Estado de São Paulo
+  </p>
+  <p style="margin-top:.75rem;font-size:.75rem">
+    © 2024 CIEBP. Todos os direitos reservados.
+  </p>
+</footer>
+
+<script src="ciebp_scripts.js"></script>
+</body>
+</html>

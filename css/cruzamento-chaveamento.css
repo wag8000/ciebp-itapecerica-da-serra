@@ -1,0 +1,65 @@
+/* ============================================================
+   CIEBP - Estilos do Chaveamento (Com Linhas SVG e Taça)
+   ============================================================ */
+
+.custom-scrollbar::-webkit-scrollbar { width: 10px; height: 10px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #EEF0F8; border-radius: 8px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #1B1464; border-radius: 8px; }
+
+.bracket-container {
+    position: relative; /* Essencial para as linhas SVG ficarem no fundo */
+    min-width: 1200px;
+    min-height: 900px;
+    font-family: 'Inter', sans-serif;
+}
+
+.bracket-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    min-width: 200px;
+}
+
+.match-box {
+    background: #FFFFFF;
+    border: 2px solid #EEF0F8;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(27, 20, 100, 0.05);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    z-index: 10; /* Mantém a caixa acima das linhas SVG */
+}
+
+/* ⚠️ ATENÇÃO: Remova o bloco antigo que usava .match-box::after para as linhas! */
+
+.match-header {
+    background: #1B1464;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    text-align: center;
+    font-weight: 700;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.team-slot {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #EEF0F8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1B1464;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+.team-slot:last-child { border-bottom: none; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+.team-slot:hover:not(.tbd) { background: rgba(233, 30, 140, 0.1); color: #E91E8C; }
+.team-slot.winner { background: #0C87D1; color: #FFFFFF; }
+.team-slot.tbd { color: #9898B8; font-style: italic; cursor: default; }
+
+.spacer { visibility: hidden; pointer-events: none; }

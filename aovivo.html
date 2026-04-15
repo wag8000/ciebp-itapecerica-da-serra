@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIEBP - Itapecerica da Serra</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/box-shadow.css" />
+  <link rel="stylesheet" href="css/" />
+  <link rel="stylesheet" href="css/detail.css" />
+  <link rel="stylesheet" type="text/tailwindcss" href="/css/tabela.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+</head>
+<body class="bg-[#F4F6FB] text-[#111827]">
+
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-[100] shadow-sm">
+    <div class="max-w-[1400px] mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="logo-hex">
+          <img src="/imagem/logo 200x200.png" alt="">
+        </div>
+        <div>
+          <div class="logo-text-main text-[#193375]">Futebol de Robôs · 2026</div>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html" class="active">Início</a>
+        <a href="#Futebol">Futebol</a>
+        <a href="aovivo.html">Ao Vivo</a>
+        <a href="#jogos">Tabela</a>
+        <a href="/docs/Regulamento_da_ Batalha_ de_ Robo.pdf" 
+          download="Regras__2026.pdf" 
+          class="menu-item link-regras"
+          title="Baixar PDF de Regras">REGRAS</a>
+        <a href="/projeto.html">Projeto</a>
+    </nav>
+
+      <div class="logo-ciebp">
+        <img src="/imagem/logo-ciebp.png" alt="logo-ciebp">
+      </div>
+    </div>
+  </header>
+
+<hr class="linha-rosa">
+
+
+<div class=" bg-navy">
+  <hr class="linha-rosa " >
+ <br>
+
+    <div class="title-primary" style="text-align: center; margin-top: 40px;">
+      <h1 class="aovivo">Em ano de Copa do Mundo,</h1>
+      <h1 class="aovivo">quem entra em Campo</h1>
+      <h2 ><span class="highlight">É o CIEBP Itapecerica da Serra</span></h2>
+    </div>
+
+  <div id="aovivo">
+      <h1 class="title-secundary">Transmissão 🔴 Ao Vivo</h1>
+  </div>
+<section id="aovivo" class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+    
+    <div class="lg:col-span-2 bg-white p-8 rounded-xl-custom shadow-xl border-t-8 border-ciebp-pink flex flex-col justify-center items-center gap-10 h-full">
+        
+        
+        <div class="flex items-center justify-center gap-2">
+            <span class="w-1 h-1 bg-red-500 rounded-full animate-ping"></span>
+            <h3 class="font-bold text-gray-400 uppercase tracking-widest text-xs">Placar ao Vivo</h3>
+        </div>
+
+        <div class="flex justify-center items-center gap-2 w-full">
+            <div class="text-center flex flex-col items-center w-1/3">
+                <div class="w-24 h-24 bg-gray-50 rounded-2xl mb-3 flex items-center justify-center text-5xl shadow-inner border border-gray-100">🤖</div>
+                <p id="team-a-name" class="font-bold text-ciebp-blue text-sm uppercase text-center break-words">Strikers</p>
+                <p id="team-a-class" class="text-xs text-gray-400 uppercase">Turma 9ºanoA</p>
+            </div>
+
+            <div class="flex items-center justify-center text-7xl font-black text-ciebp-blue italic tracking-tighter w-1/3">
+                <span id="score-a">0</span>
+                <span class="mx-2 text-4xl text-gray-300 font-normal">-</span>
+                <span id="score-b">0</span>
+            </div>
+
+            <div class="text-center flex flex-col items-center w-1/3">
+                <div class="w-24 h-24 bg-gray-50 rounded-2xl mb-3 flex items-center justify-center text-5xl shadow-inner border border-gray-100">👾</div>
+                <p id="team-b-name" class="font-bold text-ciebp-blue text-sm uppercase text-center break-words">Aliens</p>
+                <p id="team-b-class" class="text-xs text-gray-400 uppercase">Turma 9º</p>
+            </div>
+        </div>
+
+        <div class="text-center w-full">
+            <span class="inline-block px-8 py-3 bg-red-50 text-red-600 rounded-full text-xs font-black uppercase tracking-[0.2em] border border-red-100 w-full md:w-auto">Transmissão em Tempo Real</span>
+        </div>
+    </div>
+
+    <div class="lg:col-span-3 bg-black rounded-xl-custom overflow-hidden shadow-2xl aspect-video border-4 border-white">
+        <iframe width="100%" height="100%"  height="315" src="https://www.youtube.com/embed/N2k1APn8-18?si=D4lSNspQxxay5lY7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    
+</section>
+<br><br>
+<hr class="linha-rosa">
+</div>
+
+        
+
+
+  <section class="max-w-[1400px] mx-auto px-6 py-20" id="jogos">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      
+      <div>
+        <p class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-1">Central de Jogos</p>
+        <h2 class="font-['Bebas_Neue'] text-5xl text-[#193375] leading-none">TABELA EM <span class="text-[#FF1D6E]">TEMPO REAL</span></h2>
+      </div>
+
+      <div class="flex flex-col items-end gap-3">
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn active font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('all', this)">Todos</button>
+          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('live', this)">Ao Vivo</button>
+          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('ended', this)">Encerrados</button>
+          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('upcoming', this)">Em Breve</button>
+        </div>
+        
+        <button id="refresh-btn" class="font-bold text-xs uppercase tracking-widest text-[#193375] bg-white border border-[#193375] px-4 py-2 rounded-full hover:bg-blue-50 transition" onclick="refreshScores()">
+          ↻ Atualizar Placares
+        </button>
+      </div>
+
+    </div>
+    
+    <section id="tabela" class="container mx-auto px-6">
+            <div class="table-card">
+                <div class="p-8 flex justify-between items-end border-b border-gray-50">
+                    <h2 class="text-2xl font-black text-ciebp-blue uppercase tracking-tight">Cronograma de Jogos</h2>
+                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Temporada 2026</span>
+                </div>
+                <div class="overflow-x-auto px-4">
+                    <table class="w-full text-left">
+                        <tbody id="games-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <hr class="linha-rosa">
+
+  <section class="bg-white border-t border-gray-200 py-20" id="regras">
+    <div class="max-w-[1400px] mx-auto px-6">
+      <div class="flex items-center gap-4 mb-12">
+        <h3 class="font-['Bebas_Neue'] text-4xl text-[#193375]">REGRAS E INFORMAÇÕES</h3>
+        <div class="flex-grow h-px bg-gray-200"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-gray-50 border-l-4 border-[#0C87D1] p-6 rounded-r-xl shadow-sm hover:-translate-y-1 transition">
+          <div class="text-3xl mb-3">📄</div>
+          <h4 class="font-bold text-[#193375] uppercase mb-2">Formato</h4>
+          <p class="text-sm text-gray-600">Fase de grupos com eliminatórias diretas. As partidas duram 10 minutos com prorrogação em caso de empate.</p>
+        </div>
+
+        <div class="bg-gray-50 border-l-4 border-[#0C87D1] p-6 rounded-r-xl shadow-sm hover:-translate-y-1 transition">
+          <div class="text-3xl mb-3">⚙️</div>
+          <h4 class="font-bold text-[#193375] uppercase mb-2">Técnica</h4>
+        <p class="text-sm text-gray-600">Desenvolvimento com "Micro:bit e o Kit Robótica" ou blocos lógicos. A lógica de programação autoral é avaliada antes da partida.</p>
+        </div>
+
+        <div class="bg-gray-50 border-l-4 border-[#0C87D1] p-6 rounded-r-xl shadow-sm hover:-translate-y-1 transition">
+          <div class="text-3xl mb-3">📅</div>
+          <h4 class="font-bold text-[#193375] uppercase mb-2">Calendário</h4>
+          <p class="text-sm text-gray-600">Eliminatórias iniciam em maio nas escolas e as finais ocorrerão no dia "12 de junho no Parque do Povo".</p>
+        </div>
+
+        <div class="bg-gray-50 border-l-4 border-[#0C87D1] p-6 rounded-r-xl shadow-sm hover:-translate-y-1 transition">
+          <div class="text-3xl mb-3">🏆</div>
+          <h4 class="font-bold text-[#193375] uppercase mb-2">Premiação</h4>
+          <p class="text-sm text-gray-600">Medalhas e Troféus para as três primeiras equipes e certificados de participação para todos os alunos e professores inscritos na competição.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="bg-[#0B1340] py-12 text-center border-t-4 border-[#FF1D6E]">
+  <div class="max-w-[1400px] mx-auto px-6">
+    
+    <div class="mb-8 flex justify-center">
+      <img src="/imagem/logo-ciebp.png" alt="Logo CIEBP" class="h-16 brightness-0 invert opacity-90">
+    </div>
+
+    <nav class="mb-8">
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-10 font-['Barlow'] text-white uppercase tracking-widest text-sm">
+        <li><a href="#inicio" class="hover:text-[#FF1D6E] transition-colors">Início</a></li>
+        <li><a href="#Futebol" class="hover:text-[#FF1D6E] transition-colors">Futebol</a></li>
+        <li><a href="#aovivo" class="hover:text-[#FF1D6E] transition-colors">Ao Vivo</a></li>
+        <li><a href="#jogos" class="hover:text-[#FF1D6E] transition-colors">Jogos</a></li>
+        <li><a href="/docs/Regulamento_da_ Batalha_ de_ Robo.pdf" 
+          download="Regras__2026.pdf" 
+          class="hover:text-[#921DFF] transition-colors"
+          title="Baixar PDF de Regras">Regras</a></li>
+        <li><a href="/projeto.html" class="hover:text-[#FF1D6E] transition-colors">Sobre</a></li>
+      </ul>
+    </nav>
+
+    <hr class="border-white/10 mb-8 w-full">
+
+    <div class="space-y-2">
+     
+      <div class="text-gray-400 text-sm font-['Barlow']">
+        © 2026 Todos os direitos reservados. 
+        <span class="block md:inline mt-2 md:mt-0 md:ml-2 text-[#FF1D6E] font-semibold">
+            Desenvolvido pela equipe CIEBP · Temporada 2026
+        </span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+
+  <script src="js/app.js"></script>
+  <script src="js/carrousel.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
+    <script src="js/tabela.js"></script>
+  <script src="/js/resultado.js"></script>
+  <script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                'ciebp-blue': '#002B5B',
+                'ciebp-pink': '#FF007A',
+                'brasil-yellow': '#0c87d1',
+                'brasil-green': '#302681',
+                'status-gray-bg': '#ECEFF1',
+                'status-gray-text': '#90A4AE',
+                'status-yellow-bg': '#FFF9C4',
+                'status-yellow-text': '#136091',
+            },
+            borderRadius: {
+                'xl-custom': '2rem',
+            }
+        }
+    }
+}
+  </script>
+
+</body>
+</html>

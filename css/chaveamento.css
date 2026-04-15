@@ -1,0 +1,87 @@
+/* ============================================================
+   CIEBP - Estilos do Chaveamento com Scroll Duplo
+   ============================================================ */
+
+/* Estilo da barra de rolagem customizada */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #EEF0F8; 
+    border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1B1464; 
+    border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #FF1D6E; 
+}
+
+.bracket-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem; 
+    font-family: 'Inter', sans-serif;
+    height: 100%; /* Força o contêiner a esticar */
+}
+
+.bracket-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribui os jogos uniformemente na vertical */
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.match-box {
+    background: #FFFFFF;
+    border: 2px solid #EEF0F8;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(27, 20, 100, 0.05);
+    position: relative;
+    flex-shrink: 0; /* Impede que os jogos sejam esmagados */
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Conectores */
+.bracket-column:not(:last-child) .match-box::after {
+    content: '';
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    width: 2rem;
+    height: 2px;
+    background: #9898B8;
+}
+
+.match-header {
+    background: #1B1464;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    padding: 0.3rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.team-slot {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #EEF0F8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1B1464;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+.team-slot:last-child { border-bottom: none; }
+.team-slot:hover:not(.tbd) { background: rgba(233, 30, 140, 0.1); color: #E91E8C; }
+.team-slot.winner { background: #0C87D1; color: #FFFFFF; }
+.team-slot.tbd { color: #9898B8; font-style: italic; cursor: default; }
+
+/* Bloco invisível para ajudar no alinhamento flex da coluna preliminar */
+.spacer { visibility: hidden; pointer-events: none; }
