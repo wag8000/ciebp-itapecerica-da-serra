@@ -1,8 +1,13 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+// supabase.js
 
-const supabase = createClient(
-  'https://sforgndgcxkbbzstbehu.supabase.co',
-  'sb_publishable_QHZWgDbGu-7PVGgHRKJn3A_AqY2UvB-'
-)
+const SUPABASE_URL = 'https://sforgndgcxkbbzstbehu.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_QHZWgDbGu-7PVGgHRKJn3A_AqY2UvB-'; // ⚠️ use anon public key
 
-export default supabase
+// verifica se lib foi carregada
+if (!window.supabase) {
+  console.error("Supabase não carregado! Verifique o script CDN.");
+}
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+window.supabaseClient = supabase;

@@ -1,35 +1,53 @@
-import supabase from './supabase.js'
+// resultado.js
 
-async function carregarResultados() {
-    const { data, error } = await supabase
-        .from('partidas_chaveamento')
-        .select(`
-            id,
-            rodada,
-            vencedor_id,
-            equipe_a:equipes!equipe_a_id(nome),
-            equipe_b:equipes!equipe_b_id(nome)
-        `)
+async function definirVencedor(matchId, lado) {
+  // Buscar partida
+  const { data: match, error } = await supabaseClient
+    .from('matches')
+    .select('*')
+    .eq('id', matchId)
+    .single();
 
-    if (error) return console.error(error)
+  if (error) {
+    console.error(error);
+    return;
+  }
 
-    renderizarResultados(data)
-}
+  const winnerId = lado === 'A' ? match.team_a_id : match.team_b_id;
 
-function renderizarResultados(jogos) {
-    const grid = document.getElementById('games-grid')
-    grid.innerHTML = ''
-
-    jogos.forEach(j => {
-        grid.innerHTML += `
-            <div>
-                <p>${j.equipe_a?.nome || '-'}</p>
-                <p>vs</p>
-                <p>${j.equipe_b?.nome || '-'}</p>
-                <p>Vencedor: ${j.vencedor_id || '---'}</p>
-            </div>
-        `
+  // Atualiza partida atual
+  const { error: updateError } = await supabaseClient
+    .from('matches')
+    .update({
+      winner_id: winnerId,
+      status: 'ended'
     })
-}
+    .eq('id', matchId);
 
-carregarResultados()
+  if (updateError) {
+    console.error(updateError);
+    return;
+  }
+
+  // 🔥 PROPAGA PARA PRÓXIMA PARTIDA
+  if (match.next_match_id) {
+    const { data: nextMatch } = await supabaseClient
+      .from('matches')
+      .select('*')
+      .eq('id', match.next_match_id)
+      .single();
+
+    if (nextMatch) {
+      const campo =
+        nextMatch.team_a_id === null ? 'team_a_id' : 'team_b_id';
+
+      await supabaseClient
+        .from('matches')
+        .update({ [campo]: winnerId })
+        .eq('id', match.next_match_id);
+    }
+  }
+
+  alert("Resultado atualizado!");
+  location.reload();
+}
