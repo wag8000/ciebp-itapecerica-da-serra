@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Include project custom styles after Tailwind layers so they can override */
+@import "./main.css";
