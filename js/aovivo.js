@@ -1,7 +1,7 @@
 // ===============================
 // 🔴 AO VIVO (REALTIME SIMPLES)
 // ===============================
-import supabase from './supabase.js'
+const supabase = window.supabaseClient;
 
 async function carregarJogoAoVivo() {
     const { data, error } = await supabase
@@ -36,6 +36,8 @@ async function carregarJogoAoVivo() {
 setInterval(carregarJogoAoVivo, 3000)
 
 // 🚀 INIT
-document.addEventListener('DOMContentLoaded', () => {
-    carregarJogoAoVivo()
-})
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', carregarJogoAoVivo);
+} else {
+    carregarJogoAoVivo();
+}
