@@ -1,62 +1,70 @@
 const supabase = window.supabaseClient;
 
-let jogos = []
+let jogos = [];
 
 async function carregarChaveamento() {
-    const { data, error } = await supabase
-        .from('partidas_chaveamento')
-        .select(`
-            *,
-            equipe_a:equipes!equipe_a_id(nome),
-            equipe_b:equipes!equipe_b_id(nome)
-        `)
-        .order('id')
+  const { data, error } = await supabase
+    .from('matches')
+    .select(`
+      *,
+      team_a:team_a_id (nome_equipe),
+      team_b:team_b_id (nome_equipe)
+    `)
+    .order('round');
 
-    if (error) return console.error(error)
+  if (error) return console.error(error);
 
-    jogos = data
-    renderizar()
+  jogos = data;
+  renderizar();
 }
 
 function renderizar() {
-    const container = document.getElementById('bracket-ui')
-    container.innerHTML = ''
+  const container = document.getElementById('bracket-ui');
+  container.innerHTML = '';
 
-    jogos.forEach(j => {
-        container.innerHTML += `
-            <div>
-                <h3>Jogo ${j.id}</h3>
-                <button onclick="avancar(${j.id}, ${j.equipe_a_id})">
-                    ${j.equipe_a?.nome || 'A definir'}
-                </button>
-                <button onclick="avancar(${j.id}, ${j.equipe_b_id})">
-                    ${j.equipe_b?.nome || 'A definir'}
-                </button>
-            </div>
-        `
-    })
+  jogos.forEach(j => {
+    container.innerHTML += `
+      <div class="match">
+        <h3>Rodada ${j.round}</h3>
+
+        <button onclick="avancar(${j.id}, ${j.team_a_id})">
+          ${j.team_a?.nome_equipe || 'A definir'}
+        </button>
+
+        <button onclick="avancar(${j.id}, ${j.team_b_id})">
+          ${j.team_b?.nome_equipe || 'A definir'}
+        </button>
+      </div>
+    `;
+  });
 }
 
 window.avancar = async (jogoId, equipeId) => {
-    if (!equipeId) return
+  if (!equipeId) return;
 
-    const jogo = jogos.find(j => j.id === jogoId)
+  const jogo = jogos.find(j => j.id === jogoId);
+
+  await supabase
+    .from('matches')
+    .update({ winner_id: equipeId, status: 'ended' })
+    .eq('id', jogoId);
+
+  if (jogo.next_match_id) {
+    const { data: next } = await supabase
+      .from('matches')
+      .select('*')
+      .eq('id', jogo.next_match_id)
+      .single();
+
+    const campo = next.team_a_id === null ? 'team_a_id' : 'team_b_id';
 
     await supabase
-        .from('partidas_chaveamento')
-        .update({ vencedor_id: equipeId })
-        .eq('id', jogoId)
+      .from('matches')
+      .update({ [campo]: equipeId })
+      .eq('id', jogo.next_match_id);
+  }
 
-    if (jogo.proximo_jogo_id) {
-        const campo = jogo.proximo_slot === 'tA' ? 'equipe_a_id' : 'equipe_b_id'
+  carregarChaveamento();
+};
 
-        await supabase
-            .from('partidas_chaveamento')
-            .update({ [campo]: equipeId })
-            .eq('id', jogo.proximo_jogo_id)
-    }
-
-    carregarChaveamento()
-}
-
-carregarChaveamento()
+carregarChaveamento();

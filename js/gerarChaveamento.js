@@ -1,4 +1,4 @@
-// gerarChaveamento.js
+const supabase = window.supabaseClient;
 
 async function gerarChaveamento() {
   const btn = document.getElementById("btnGerar");
@@ -6,22 +6,16 @@ async function gerarChaveamento() {
   btn.disabled = true;
   btn.innerText = "Gerando...";
 
-  const { error } = await supabaseClient.rpc('gerar_chaveamento');
+  const { error } = await supabase.rpc('gerar_chaveamento');
 
   if (error) {
-    console.error("❌ Erro:", error.message);
+    console.error(error);
     alert("Erro ao gerar chaveamento");
     btn.disabled = false;
     btn.innerText = "Gerar Chaveamento";
     return;
   }
 
-  alert("✅ Chaveamento gerado!");
-  btn.innerText = "Gerado!";
-  
-  setTimeout(() => {
-    btn.disabled = false;
-    btn.innerText = "Gerar Chaveamento";
-    location.reload();
-  }, 1500);
+  alert("Chaveamento gerado!");
+  location.reload();
 }

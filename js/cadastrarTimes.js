@@ -1,17 +1,15 @@
-// cadastrarTime.js
+const supabase = window.supabaseClient;
 
-async function cadastrarTime(escola, nome) {
-  const { data, error } = await supabaseClient
+async function cadastrarTime(escola, nome_equipe) {
+  const { error } = await supabase
     .from('teams')
-    .insert([{ escola, nome }])
-    .select();
+    .insert([{ escola, nome_equipe }]);
 
   if (error) {
-    console.error("❌ Erro ao cadastrar:", error.message);
-    alert("Erro ao cadastrar time");
+    console.error(error);
+    alert("Erro ao cadastrar");
     return;
   }
 
-  console.log("✅ Time cadastrado:", data);
-  alert("Time cadastrado com sucesso!");
+  alert("Time cadastrado!");
 }
