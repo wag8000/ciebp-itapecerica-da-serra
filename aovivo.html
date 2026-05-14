@@ -113,65 +113,26 @@
       <h1 class="title-secundary">Transmissão 🔴 Ao Vivo</h1>
   </div>
 <section id="aovivo" class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
-    
-    <div class="lg:col-span-2 bg-white p-8 rounded-xl-custom shadow-xl border-t-8 border-ciebp-pink flex flex-col justify-center items-center gap-10 h-full">
-        
-        
-
-    </div>
-
-    <div class="lg:col-span-3 bg-black rounded-xl-custom overflow-hidden shadow-2xl aspect-video border-4 border-white">
-        <iframe width="100%" height="100%"  height="315" src="https://www.youtube.com/embed/N2k1APn8-18?si=D4lSNspQxxay5lY7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+  <br><br>
+ 
+<div class="lg:col-span-3 bg-black rounded-xl-custom overflow-hidden shadow-2xl aspect-video border-4 border-white">
+    <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/embed/N2k1APn8-18?si=D4lSNspQxxay5lY7" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+</div>
     
 </section>
 <br><br>
 <hr class="linha-rosa">
 </div>
 
-        
-
-
-  <section class="max-w-[1400px] mx-auto px-6 py-20" id="jogos">
-    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
-      
-      <div>
-        <p class="font-bold text-gray-400 uppercase tracking-widest text-xs mb-1">Central de Jogos</p>
-        <h2 class="font-['Bebas_Neue'] text-5xl text-[#193375] leading-none">TABELA EM <span class="text-[#FF1D6E]">TEMPO REAL</span></h2>
-      </div>
-
-      <div class="flex flex-col items-end gap-3">
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn active font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('all', this)">Todos</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('live', this)">Ao Vivo</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('ended', this)">Encerrados</button>
-          <button class="filter-btn font-bold text-xs uppercase tracking-widest border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-100 transition" onclick="filterGames('upcoming', this)">Em Breve</button>
-        </div>
-        
-        <button id="refresh-btn" class="font-bold text-xs uppercase tracking-widest text-[#193375] bg-white border border-[#193375] px-4 py-2 rounded-full hover:bg-blue-50 transition" onclick="refreshScores()">
-          ↻ Atualizar Placares
-        </button>
-      </div>
-
-    </div>
-    
-    <section id="tabela" class="container mx-auto px-6">
-            <div class="table-card">
-                <div class="p-8 flex justify-between items-end border-b border-gray-50">
-                    <h2 class="text-2xl font-black text-ciebp-blue uppercase tracking-tight">Cronograma de Jogos</h2>
-                    <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Temporada 2026</span>
-                </div>
-                <div class="overflow-x-auto px-4">
-                    <table class="w-full text-left">
-                        <tbody id="games-table-body">
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-    <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </section>
 
   <hr class="linha-rosa">
 
