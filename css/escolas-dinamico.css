@@ -1,0 +1,164 @@
+/* =========================================================
+   ESCOLAS-DINAMICO.CSS - Interações e movimento discreto
+   Arquivo separado para dar vida aos containers sem poluir
+   a leitura da página.
+========================================================= */
+
+:root {
+  --motion-short: 180ms;
+  --motion-medium: 320ms;
+}
+
+/* Prioridade visual da Alexandre: rosa, mas sem prender o estado ativo */
+#schoolsQuickLinks .schools-index__link.is-priority:not(.is-active),
+#schoolsQuickLinks .schools-index__link[href="#alexandre-rodrigues-nogueira"]:not(.is-active) {
+  border-color: rgba(255, 29, 110, 0.34);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+#schoolsQuickLinks .schools-index__link.is-priority:not(.is-active)::before,
+#schoolsQuickLinks .schools-index__link[href="#alexandre-rodrigues-nogueira"]:not(.is-active)::before {
+  opacity: 1;
+  background: linear-gradient(180deg, var(--ciebp-pink), #ff7aae);
+}
+
+#schoolsQuickLinks .schools-index__link.is-priority:not(.is-active)::after,
+#schoolsQuickLinks .schools-index__link[href="#alexandre-rodrigues-nogueira"]:not(.is-active)::after {
+  color: var(--ciebp-pink);
+}
+
+#schoolsQuickLinks .schools-index__link.is-active {
+  color: var(--ciebp-pink);
+}
+
+.school-card--featured:not(.is-target) {
+  border-color: rgba(255, 29, 110, 0.3);
+}
+
+.school-card--featured::before,
+.school-card--featured.is-target::before {
+  background: linear-gradient(180deg, var(--ciebp-pink), #ff7aae);
+}
+
+.school-card--featured .school-card__eyebrow {
+  color: var(--ciebp-pink);
+  background: rgba(255, 29, 110, 0.1);
+  border-color: rgba(255, 29, 110, 0.18);
+}
+
+.school-card--featured .school-card__eyebrow::after {
+  content: "Prioritária";
+  margin-left: 8px;
+  padding: 3px 8px;
+  color: #ffffff;
+  background: var(--ciebp-pink);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.school-card--featured .school-card__meta-item {
+  border-left-color: var(--ciebp-pink);
+}
+
+/* Entrada suave dos cards */
+.school-card[data-animate="ready"] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.school-card[data-animate="show"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.school-card[data-animate="show"] .school-card__image {
+  transition: transform var(--motion-medium) ease;
+}
+
+.school-card[data-animate="show"]:hover .school-card__image {
+  transform: scale(1.015);
+}
+
+/* Pequeno pulso de foco quando o usuário abre por hash ou clica no índice */
+.school-card.is-target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 29, 110, 0.12);
+}
+
+/* Contador de resultado criado pelo JS */
+.schools-results-status {
+  margin-top: 14px;
+  color: var(--ciebp-muted);
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.schools-results-status strong {
+  color: var(--ciebp-blue);
+}
+
+/* Fallback para cards com imagem vazia ou caminho incompleto */
+.school-card--image-missing .school-card__media {
+  background: linear-gradient(135deg, var(--ciebp-blue), var(--ciebp-cyan));
+}
+
+.school-card--image-missing .school-card__image {
+  display: none;
+}
+
+.school-card--image-missing .school-card__image-fallback {
+  display: grid;
+}
+
+.school-card__image-fallback small {
+  display: block;
+  max-width: 320px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Busca sem resultado */
+.schools-empty-state {
+  display: none;
+  padding: 24px;
+  border: 1px dashed rgba(25, 51, 117, 0.22);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ciebp-blue);
+  font-weight: 900;
+  text-align: center;
+}
+
+.schools-empty-state.is-visible {
+  display: block;
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .school-card,
+  .school-card__image,
+  .schools-index__link,
+  .back-to-top {
+    transition: none;
+  }
+
+  .school-card[data-animate="ready"],
+  .school-card[data-animate="show"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .school-card[data-animate="show"]:hover .school-card__image {
+    transform: none;
+  }
+}

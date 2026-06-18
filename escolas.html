@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIEBP - Itapecerica da Serra</title>
+
+  <link rel="icon" type="image/x-icon" href="/imagem/favicon/favicon.ico" >
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/box-shadow.css" />
+  <link rel="stylesheet" href="./css/tabela.css" />
+  <link rel="stylesheet" href="./css/detail.css" />
+  <link rel="stylesheet" href="./css/aovivo.css" />
+  <link rel="stylesheet" href="./css/escolas.css" />
+  <link rel="stylesheet" href="./css/projeto.css" />
+  <link rel="stylesheet" href="./css/mapa.css" />
+  <link rel="stylesheet" href="./css/carrossel.css" />
+  <link rel="stylesheet" href="./css/tutoriais.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+</head>
+<body class="bg-[#F4F6FB] text-[#111827]">
+
+<header class="bg-white border-b border-gray-200 sticky top-0 z-[100] shadow-sm">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    
+    <div class="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
+      <div class="logo-hex w-12 md:w-16 shrink-0">
+        <img src="/imagem/logo 200x200.png" alt="Logo" class="w-full h-auto object-contain">
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-center gap-1 md:gap-3 min-w-0">
+        <div class="logo-text-main text-[#193375] font-black text-sm md:text-xl leading-tight truncate">
+          FUTEBOL DE ROBÔS <span class="hidden md:inline">· 2026</span>
+        </div>
+        
+ <!--<a href="aovivo.html" class="btn-live active"> 
+          <span class="live-dot animate-pulse"></span>
+          <span class="font-black tracking-widest drop-shadow-md uppercase">Ao Vivo</span>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="hidden lg:flex flex-none justify-center px-4">
+       <a href="ciebp.html" class="inline-flex items-center justify-center gap-1.5 bg-[#193375] hover:bg-[#e61a63] text-[#f7f7f7] px-4 py-1.5 rounded-full transition-all duration-300 shadow-[0_2px_4px_rgba(255,29,110,0.3)] hover:shadow-[0_4px_6px_rgba(255,29,110,0.4)]">
+          <span class="w-2 h-2 rounded-full bg-[#ffffff]"></span>
+          <span class="font-black tracking-widest uppercase text-sm">CIEBP</span>
+       </a>
+    </div>
+    <nav class="hidden lg:flex gap-6 items-center px-4">
+      <a href="index.html" class="active font-semibold hover:text-[#FF1D6E] transition-colors">Início</a>
+      <a href="equipes.html" class="font-semibold hover:text-[#FF1D6E] transition-colors">Equipes</a>
+      <a href="tutoriais.html" class="font-semibold hover:text-[#FF1D6E] transition-colors">Tutoriais</a>
+      <!--<a href="tabela.html" class="text-[#193375] font-bold text-lg border-b border-gray-50 pb-2">Tabela</a> -->
+      <a href="https://drive.google.com/drive/folders/1aB9zJqqqu-42GtVnJJHV7uRWltcxJ1ac?usp=drive_link" download="Regras__2026.pdf" class="menu-item link-regras font-bold text-[#55718d] hover:text-[#0070ba] transition-colors" title="Baixar PDF de Regras">REGRAS</a>
+      <a href="/projeto.html" class="font-semibold hover:text-[#FF1D6E] transition-colors">Projeto</a>
+    </nav>
+
+    <div class="flex items-center gap-3 md:gap-4 shrink-0">
+      <div class="logo-ciebp shrink-0">
+        <img src="/imagem/logo-ciebp.png" alt="logo-ciebp" class="h-10 md:h-12 w-auto object-contain">
+      </div>
+      
+      <button id="btn-mobile-menu" class="lg:hidden text-[#193375] p-1 focus:outline-none" aria-label="Abrir Menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+<div id="mobile-menu" class="hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 top-full z-[101]">
+  <nav class="flex flex-col px-6 py-4 gap-4">
+      <a href="index.html" class="text-[#193375] font-bold text-lg border-b border-gray-50 pb-2">Início</a>
+      <a href="equipes.html" class="text-[#193375] font-bold text-lg border-b border-gray-50 pb-2">Equipes</a>
+      <a href="tutoriais.html" class="text-[#193375] font-bold text-lg border-b border-gray-50 pb-2">Tutoriais</a>
+      <!--<a href="tabela.html" class="text-[#193375] font-bold text-lg border-b border-gray-50 pb-2">Tabela</a> -->
+      <a href="https://drive.google.com/drive/folders/1aB9zJqqqu-42GtVnJJHV7uRWltcxJ1ac?usp=drive_link" download="Regras__2026.pdf" class="menu-item link-regras font-bold text-[#55718d] hover:text-[#0070ba] transition-colors" title="Baixar PDF de Regras">REGRAS</a>
+      <a href="/projeto.html" class="text-[#193375] font-bold text-lg">Projeto</a>
+      
+      <a href="projeto.html" class="flex items-center justify-center gap-2 bg-[#e61a63] text-[#f7f7f7] px-4 py-3 mt-2 rounded-full shadow-[0_2px_4px_rgba(25,51,117,0.3)] active:bg-[#e61a63] transition-colors">
+        <span class="w-2 h-2 rounded-full bg-[#ffffff]"></span>
+        <span class="font-black tracking-widest uppercase text-base">CIEBP</span>
+      </a>
+  </nav>
+</div>
+</header>
+
+<section class="tutorial-section relative overflow-hidden" style="--bg-img: url('/imagem/background-salas/background.png');">
+    <hr class="linha-rosa mb-10">
+
+  
+  <div class="title-primary text-center relative z-10">
+    <h1>COPA FUTEBOL DE ROBÔS</h1>
+    <h2><span class="highlight">CIEBP - Itapecerica da Serra</span></h2>
+  </div>
+
+  <!-- Texto institucional (Corrigido: max-w-5xl) -->
+  <div class="max-w-5xl mx-auto px-6 text-center text-[#1f2937] font-['Barlow'] text-lg md:text-xl leading-relaxed space-y-6 relative z-10">
+
+  </div>
+
+  
+
+</section>
+
+
+ <main id="conteudo-escolas">
+    <section class="schools-hero" aria-labelledby="titulo-escolas">
+      <div class="schools-hero__container">
+        <span class="schools-hero__tag">Copa Futebol de Robôs CIEBP</span>
+        <h1 id="titulo-escolas" class="schools-hero__title">Escolas participantes</h1>
+        <p class="schools-hero__text">
+          Página de consulta das escolas, equipes, professores, jogadores e fotos oficiais enviadas para a Copa Futebol de Robôs CIEBP Itapecerica da Serra.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="schools-tools" aria-labelledby="titulo-acesso-rapido">
+      <div class="schools-tools__container">
+        <div class="schools-tools__header">
+          <div>
+            <p class="schools-tools__eyebrow">Pesquisa</p>
+            <h2 id="titulo-acesso-rapido" class="schools-tools__title">Escolas</h2>
+          </div>
+          <label class="schools-search" for="schoolSearch">
+            <span class="schools-search__label">Buscar escola</span>
+            <input id="schoolSearch" class="schools-search__input" type="search" placeholder="Digite o nome da escola..." autocomplete="off" />
+          </label>
+        </div>
+
+        <nav id="schoolsQuickLinks" class="schools-index" aria-label="Lista de escolas"></nav>
+      </div>
+    </section>
+
+    <section class="schools-list" aria-label="Detalhes das escolas participantes">
+      <section id="alexandre-rodrigues-nogueira" class="school-card" data-school-card data-school-name="Alexandre Rodrigues Nogueira" data-school-number="01">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/escolas/alexandre-rodrigues-nogueira.jpeg"
+            alt="Foto da equipe da escola Alexandre Rodrigues Nogueira na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 01</p>
+          <h2 class="school-card__title">Alexandre Rodrigues Nogueira</h2>
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Professor(a)</dd>
+            </div>
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="andre-franco-montoro" class="school-card" data-school-card data-school-name="André Franco Montoro" data-school-number="02">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/escolas/bairro-boa-vista.jpeg"
+            alt="Foto da equipe da escola André Franco Montoro na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 02</p>
+          <h2 class="school-card__title">André Franco Montoro</h2>
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Professor(a)</dd>
+            </div>
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="bairro-boa-vista" class="school-card" data-school-card data-school-name="Bairro Boa Vista" data-school-number="03">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/escolas/bairro-boa-vista.jpeg"
+            alt="Foto da equipe da escola Bairro Boa Vista na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 03</p>
+          <h2 class="school-card__title">Bairro Boa Vista</h2>
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Professor(a)</dd>
+            </div>
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="bairro-da-palmeirinha" class="school-card" data-school-card data-school-name="Bairro da Palmeirinha" data-school-number="04">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/escolas/bairro-da-palmeirinha.jpeg"
+            alt="Foto da equipe da escola Bairro da Palmeirinha na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 04</p>
+          <h2 class="school-card__title">Bairro da Palmeirinha</h2>
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Professor(a)</dd>
+            </div>
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="benevides-beraldo-comendador" class="school-card" data-school-card data-school-name="Benevides Beraldo – Comendador" data-school-number="05">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/BENEVIDES.png"
+            alt="Foto da equipe da escola Benevides Beraldo – Comendador na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 05</p>
+          <h2 class="school-card__title">Benevides Beraldo – Comendador</h2>
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Benevidianos</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>José Everton</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="carlos-alberto-pereira" class="school-card" data-school-card data-school-name="Carlos Alberto Pereira" data-school-number="06">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Benevides Beraldo – Comendador na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 06</p>
+          <h2 class="school-card__title">Carlos Alberto Pereira</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Apex CAP</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Leticia Marques do Nascimento</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="eduardo-roberto-daher" class="school-card" data-school-card data-school-name="Eduardo Roberto Daher" data-school-number="07">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/DAHER.png"
+            alt="Foto da equipe da escola Benevides Beraldo – Comendador na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 07</p>
+          <h2 class="school-card__title">Eduardo Roberto Daher</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Tropa dos boleiros</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Alexandre de Oliveira Santos</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="jardim-do-carmo" class="school-card" data-school-card data-school-name="Jardim do Carmo" data-school-number="08">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/JD_CARMO.png"
+            alt="Foto da equipe da escola Benevides Beraldo – Comendador na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 08</p>
+          <h2 class="school-card__title">Jardim do Carmo</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>RoboHawks</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Diomarques Amancio de Jesus</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="joao-ortiz-rodrigues" class="school-card" data-school-card data-school-name="João Ortiz Rodrigues" data-school-number="09">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/JOAO_ORTIZ.png"
+            alt="Foto da equipe da escola João Ortiz Rodrigues na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 09</p>
+          <h2 class="school-card__title">João Ortiz Rodrigues</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Black Panthers</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Paula Costa da Silva Querino</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="joaquim-fernando-paes-de-barros-neto" class="school-card" data-school-card data-school-name="Joaquim Fernando Paes de Barros Neto" data-school-number="10">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Joaquim Fernando Paes de Barros Neto na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 10</p>
+          <h2 class="school-card__title">Joaquim Fernando Paes de Barros Neto</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>A definir</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="levi-pereira-martins-professor" class="school-card" data-school-card data-school-name="Levi Pereira Martins – Professor" data-school-number="11">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/LEVI.png"
+            alt="Foto da equipe da escola Joaquim Fernando Paes de Barros Neto na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 11</p>
+          <h2 class="school-card__title">Levi Pereira Martins – Professor</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Fenix</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Daniela Andriolli Martins Gazda</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="matilde-maria-cremm" class="school-card" data-school-card data-school-name="Matilde Maria Cremm" data-school-number="12">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Joaquim Fernando Paes de Barros Neto na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 12</p>
+          <h2 class="school-card__title">Matilde Maria Cremm</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>A definir</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="neide-celestina-de-oliveira" class="school-card" data-school-card data-school-name="Neide Celestina de Oliveira" data-school-number="14">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Neide Celestina na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 13</p>
+          <h2 class="school-card__title">Neide Celestina de Oliveira</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>A definir</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>A definir</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="natercia-cremm-de-moraes-pedro-professora" class="school-card" data-school-card data-school-name="Natércia Cremm de Moraes Pedro – Professora" data-school-number="13">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Natércia Cremm de Moraes Pedro – Professora na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 14</p>
+          <h2 class="school-card__title">Natércia Cremm de Moraes Pedro – Professora</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Robocraft os Engrenados</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Josué Messias da Silva</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="oredo-rodrigues-da-cruz" class="school-card" data-school-card data-school-name="Oredo Rodrigues da Cruz" data-school-number="15">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Oredo Rodrigues da Cruz na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 15</p>
+          <h2 class="school-card__title">Oredo Rodrigues da Cruz</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>ORC</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Rosângela da Costa Cardoso Silva </dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+        <section id="jardim-pedra-branca" class="school-card" data-school-card data-school-name="Jardim Pedra Branca" data-school-number="17">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Benevides Beraldo – Comendador na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 16</p>
+          <h2 class="school-card__title">Pedra Branca</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>As poderosas</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Jander Godinho Soares</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="paulo-de-castro-ferreira-junior-jornalista" class="school-card" data-school-card data-school-name="Paulo de Castro Ferreira Junior – Jornalista" data-school-number="16">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/"
+            alt="Foto da equipe da escola Paulo de Castro Ferreira Junior – Jornalista na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 17</p>
+          <h2 class="school-card__title">Paulo de Castro Ferreira Junior – Jornalista</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Katchau</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Silmara Ramos Pereira </dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="salvador-de-leone" class="school-card" data-school-card data-school-name="Salvador de Leone" data-school-number="17">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/SALVADOR.png"
+            alt="Foto da equipe da escola Paulo de Castro Ferreira Junior – Jornalista na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 18</p>
+          <h2 class="school-card__title">Salvador de Leone</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Leone Bots</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Jeferson Moraes de Oliveira</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sophia-maria-januaria-amaral" class="school-card" data-school-card data-school-name="Sophia Maria Januária Amaral" data-school-number="18">
+        <div class="school-card__media">
+          <img
+            class="school-card__image"
+            src="/imagem/equipes/SOPHIA.png"
+            alt="Foto da equipe da escola Paulo de Castro Ferreira Junior – Jornalista na Copa Futebol de Robôs CIEBP"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="school-card__content">
+          <p class="school-card__eyebrow">Escola participante - 19</p>
+          <h2 class="school-card__title">Sophia Maria Januária Amaral</h2>
+ 
+
+          <dl class="school-card__meta">
+            <div class="school-card__meta-item">
+              <dt>Nome da equipe</dt>
+              <dd>Os Feras</dd>
+            </div>
+            <div class="school-card__meta-item">
+              <dt>Professor(a)</dt>
+              <dd>Marconi Cisa de Meleo</dd>
+            </div>
+            
+          </dl>
+
+          <div class="school-card__actions">
+            <a class="school-card__button school-card__button--primary" href="equipes.html">Voltar para equipes</a>
+          </div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+    <hr class="linha-rosa">
+
+
+    
+
+  <hr class="linha-rosa">
+
+
+
+<footer class="bg-[#0B1340] py-12 text-center border-t-4 border-[#FF1D6E] relative z-40">
+  <div class="max-w-[1400px] mx-auto px-6">
+    
+    <div class="mb-8 flex justify-center">
+      <img src="/imagem/logo-ciebp.png" alt="Logo CIEBP" class="h-16 brightness-0 invert opacity-90">
+    </div>
+
+    <nav class="mb-8">
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-10 font-['Barlow'] text-white uppercase tracking-widest text-sm">
+        <li><a href="index.html" class="hover:text-[#FF1D6E] transition-colors">Início</a></li>
+        <li><a href="tutoriais.html" class="hover:text-[#FF1D6E] transition-colors">Tutoriais</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1aB9zJqqqu-42GtVnJJHV7uRWltcxJ1ac?usp=drive_link" download="Regras__2026.pdf" class="hover:text-[#921DFF] transition-colors" title="Baixar PDF de Regras">Regras</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex flex-col items-center gap-5 mb-8">
+      
+      <div class="flex flex-col items-center gap-5 mb-8">
+      
+      <div class="flex items-center gap-6 text-white/90">
+    
+    <a href="https://www.instagram.com/ciebpjoaquim/" target="_blank" aria-label="Instagram" class="hover:text-[#FF1D6E] hover:scale-110 transition-all duration-300">
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+      </svg>
+    </a>
+    
+    <a href="https://wa.me/5511945891459" target="_blank" aria-label="WhatsApp" class="hover:text-[#FF1D6E] hover:scale-110 transition-all duration-300">
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    
+  </div>
+
+      <button id="btnOpenMap" class="bg-[#FF1D6E] hover:bg-[#e61a63] text-white font-['Barlow'] font-bold tracking-wider uppercase px-3 py-1 rounded-full transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,29,110,0.39)] hover:shadow-[0_6px_20px_rgba(255,29,110,0.23)] hover:-translate-y-1">
+        Faça uma visita
+      </button>
+
+    </div>
+
+    <div class="space-y-2">
+      <div class="text-gray-400 text-sm font-['Barlow']">
+        © 2026 Todos os direitos reservados. 
+        <span class="block md:inline mt-2 md:mt-0 md:ml-2 text-[#faf9fa] font-semibold">
+            Equipe CIEBP · Temporada 2026
+        </span>
+      </div>
+      <a id="linkedin-link" 
+          href="https://www.linkedin.com/in/david-santos-souza-130151260/" 
+          target="_blank" 
+          aria-label="LinkedIn do Desenvolvedor" 
+          class="text-sm font-semibold text-[#FF1D6E] hover:text-white hover:-translate-y-0.5 transition-all duration-300 inline-block">
+          Feito por: David S.S.
+      </a>
+    </div>
+    
+  </div>
+</footer>
+
+<div id="mapModal" class="fixed inset-0 z-[200] hidden bg-[#0B1340]/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" aria-modal="true" role="dialog">
+  
+  <div id="mapModalContent" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col relative">
+    
+    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+      <h3 class="text-2xl font-black text-[#193375] font-['Bebas_Neue'] tracking-wide mt-1">FAÇA UMA VISITA!</h3>
+    </div>
+    
+    <div class="relative bg-gray-100 flex-1">
+      
+      <button id="btnCloseMap" class="absolute top-4 right-4 z-10 bg-white/95 backdrop-blur-sm hover:bg-[#FF1D6E] text-[#193375] hover:text-white p-2.5 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.3)] transition-all duration-300 focus:outline-none" title="Fechar Mapa" aria-label="Fechar modal">
+        <svg class="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <iframe 
+        class="w-full h-[400px] md:h-[400px] lg:h-[500px] border-0 custom-map-iframe" 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7306.117535130936!2d-46.85705182565614!3d-23.70959532272526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfad0468975739%3A0x5e2c499901caf1f!2sJoaquim%20Fernando%20Paes%20de%20Barros%20Neto!5e0!3m2!1spt-BR!2sbr!4v1776875048597!5m2!1spt-BR!2sbr" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+    </div>
+  </div>
+</div>
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="./js/app.js"></script>
+  <script src="./js/carrousel.js"></script>
+  <script src="./js/tabela.js"></script>
+  <script type="module" src="./js/pages/resultado.js"></script>
+  <script type="module" src="./js/escola.js"></script>
+  <script src="./js/aovivo.js"></script>
+  <script src="./js/mapa.js"></script>
+  <script src="./js/escolas.js"></script>
+  <script src="./js/escolas-dinamico.js"></script>
+
+  <script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                'ciebp-blue': '#002B5B',
+                'ciebp-pink': '#FF007A',
+                'brasil-yellow': '#0c87d1',
+                'brasil-green': '#302681',
+                'status-gray-bg': '#ECEFF1',
+                'status-gray-text': '#90A4AE',
+                'status-yellow-bg': '#FFF9C4',
+                'status-yellow-text': '#136091',
+            },
+            borderRadius: {
+                'xl-custom': '2rem',
+            }
+        }
+    }
+}
+  </script>
+
+</body>
+</html>
